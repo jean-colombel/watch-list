@@ -1,15 +1,14 @@
-<div class="banner" style="background-image: url(https://images.unsplash.com/photo-1505775561242-727b7fba20f0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
-  <div class="container d-flex justify-content-center">
-    <h1><%= @list.name %></h1>
-  </div>
-</div>
-<div class="container d-flex justify-content-end">
-  <%= link_to 'add a movie', new_list_bookmark_path(@list) %>
-</div>
-<div class="container">
-  <% @list.bookmarks.each do |bookmark| %>
-    <p><%= bookmark.movie.title %></p>
-    <p><%= bookmark.comment %></p>
-  <% end %>
-  </div>
-</div>
+<h1><%= @list.name %></h1>
+<br>
+<%= link_to 'add a movie', new_list_bookmark_path(@list) %>
+<br>
+<br>
+<% @list.bookmarks.each_with_index do |bookmark, i| %>
+  <ul>
+    <li><%= "#{i}. #{bookmark.movie.title}" %></li>
+    <li><%= image_tag(bookmark.movie.poster_url, width: 200, height: 200, alt: bookmark.movie.title, crop: :fill) %></li>
+    <li><%= bookmark.comment %></li>
+    <li><%= link_to 'Delete', bookmark_path(bookmark), method: :delete %></li>
+  </ul>
+<% end %>
+

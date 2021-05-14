@@ -11,15 +11,3 @@
 // Your CSS partials
 @import "components/index";
 @import "lists/index";
-
-body {
-  background-color: $light-gray;
-  i {
-    color: $red;
-    font-size: 40px;
-  }
-  a{
-    text-decoration: none;
-  }
-}
-
