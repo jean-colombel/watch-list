@@ -1,0 +1,53 @@
+.show-container {
+  h1 {
+    font-weight: 800;
+    margin-bottom: 0;
+  }
+  a {
+    color: grey;
+    text-decoration: none;
+    transition: 0.1s;
+    &:hover {
+      color: black;
+      font-weight: bold;
+    }
+  }
+}
+
+.bookmark-cards {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.bookmark-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 8px 24px rgba(0,0,0,0.3);
+  padding: 8px;
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 400px;
+  }
+  h2 {
+    font-size: 24px;
+    margin-top: 8px;
+  }
+  p {
+    font-style: italic;
+  }
+  a {
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    align-self: flex-end;
+    background-color: rgba(231, 54, 49, 1);
+    padding: 4px 16px;
+    border-radius: 16px;
+    opacity: 0.5;
+    transition: 0.3s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

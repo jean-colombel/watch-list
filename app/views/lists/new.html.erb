@@ -1,4 +1,8 @@
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit 'Create new list' %>
-<% end %>
+<div class="container form-container">
+  <h1>Create a new list</h1>
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit 'Create new list', class: "btn btn-success"%>
+  <% end %>
+</div>
