@@ -6,10 +6,14 @@
 <div class="cards bookmark-cards">
   <% @list.bookmarks.each_with_index do |bookmark, i| %>
     <div class="bookmark-card">
-      <%= image_tag(bookmark.movie.poster_url, width: 200, height: 200, alt: bookmark.movie.title, crop: :fill) %>
-      <h2><%= bookmark.movie.title %></h2>
-      <p><%= bookmark.comment %></p>
-      <%= link_to 'Delete', bookmark_path(bookmark), method: :delete %>
+      <div class="card-content">
+        <%= image_tag(bookmark.movie.poster_url, width: 200, height: 200, alt: bookmark.movie.title, crop: :fill) %>
+        <h2><%= bookmark.movie.title %></h2>
+        <p><%= bookmark.comment %></p>
+      </div>
+      <div class="delete-section">
+        <%= link_to 'Delete', bookmark_path(bookmark), method: :delete %>
+      </div>
     </div>
   <% end %>
 </div>

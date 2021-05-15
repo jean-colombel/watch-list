@@ -5,6 +5,7 @@
   }
   a {
     color: grey;
+    margin-left: 4px;
     text-decoration: none;
     transition: 0.1s;
     &:hover {
@@ -20,10 +21,10 @@
 }
 
 .bookmark-card {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   box-shadow: 0px 8px 24px rgba(0,0,0,0.3);
   padding: 8px;
+  transition: 0.3s;
   img {
     width: 100%;
     object-fit: cover;
@@ -36,11 +37,18 @@
   p {
     font-style: italic;
   }
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.delete-section {
+  display: flex;
+  flex-direction: row-reverse;
   a {
     font-size: 12px;
     color: white;
     text-decoration: none;
-    align-self: flex-end;
     background-color: rgba(231, 54, 49, 1);
     padding: 4px 16px;
     border-radius: 16px;
@@ -51,3 +59,6 @@
     }
   }
 }
+
+
+
